@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #020006;
+    text-align: center;
+    font-family: "Euclid Circular A", "Poppins";
+  }
+  
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 16px;
+    transition: 0.3s;
+  }
+  
+  .container:hover {
+    gap: 0;
+  }
+  
+  .card {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 150px;
+    border-radius: 25px;
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.7);
+  }
+  
+  .card,
+  img,
+  .content
+   {
+    transition: 0.7s;
+  }
+  
+  h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 45px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+  
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: #fff;
+    padding: 15px;
+    background: #b0b0d6;
+    background: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 70%) 10%,
+      rgb(255 255 255 / 0%) 100%
+    );
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  span {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 50px;
+    translate: -300px 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .card:hover {
+    flex: 0 1 55rem;
+    scale: 1.1;
+    z-index: 10;
+    opacity: 1;
+  }
+  .card:hover img {
+    filter: none;
+  }
+  
+ .card:hover .content  {
+    opacity: 1;
+    visibility: visible;
+    
+  }
+
+  
+.card:hover span {
+    translate: -50% 0;
+    opacity: 1;
+    visibility: visible;
+  }
